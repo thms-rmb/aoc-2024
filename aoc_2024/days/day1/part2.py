@@ -15,4 +15,4 @@ def solve_puzzle(puzzle_input: str) -> str:
     for a in left:
         result += a * right[a]
 
-    return result
+    return str(result)
