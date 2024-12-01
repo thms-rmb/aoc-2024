@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "aoc-2024"
+version = "0.1.0"
+description = ""
+authors = ["Thomas Rambø <thms.rmb@gmail.com>"]
+readme = "README.md"
+packages = [{include = "aoc_2024"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.scripts]
+aoc-2024 = "aoc_2024.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
