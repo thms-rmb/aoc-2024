@@ -25,7 +25,7 @@ def main():
                 ))
                 continue
 
-            input_path = files(module).joinpath(f"inputs/{part}")
+            input_path = files(module).joinpath(f"input")
 
             try:
                 with input_path.open() as puzzle_input:
