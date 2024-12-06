@@ -1,4 +1,5 @@
 import csv
+from datetime import datetime
 from importlib import import_module
 from importlib.resources import files
 import sys
@@ -10,7 +11,7 @@ class csv_dialect(csv.unix_dialect):
 
 def main():
     outputs = [
-        ("Day", "Part", "Output"),
+        ("Day", "Part", "Time (in microseconds)", "Output"),
     ]
 
     for day in range(1, 26):
@@ -29,9 +30,12 @@ def main():
 
             try:
                 with input_path.open() as puzzle_input:
+                    start_time = datetime.now()
                     puzzle_output = module.solve_puzzle(puzzle_input.read())
+                    end_time = datetime.now()
+                    elapsed_time = (end_time - start_time).microseconds
                 outputs.append((
-                    day, part, puzzle_output,
+                    day, part, elapsed_time, puzzle_output,
                 ))
             except Exception as e:
                 raise RuntimeError(

@@ -36,8 +36,8 @@ def iter_diagonal_up(
 
 
 def iter_diagonal_down(
-        end: coordinate,
-        position: coordinate,
+    end: coordinate,
+    position: coordinate,
 ):
     y, x = position
 
